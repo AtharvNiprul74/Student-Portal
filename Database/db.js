@@ -18,4 +18,4 @@ const pool = mysql2.createPool({
   connectionLimit: 10,
 });
 
-module.exports = pool; //exported database
+module.exports = pool.promise(); //exported database
