@@ -1,6 +1,7 @@
 const express = require("express"); //imported express
 const app = express(); //This line creates an Express application object.
 require("dotenv").config()
+const db = require("./Database/db"); //imported database connection
 
 //This line imports the Admin routes module and stores it in adminRouter.
 const adminRouter = require("./Routes/Admin");
