@@ -22,3 +22,7 @@ app.use("/uploads",express.static("uploads"))
 app.use("/public", publicRouter);
 app.use("/admin", authenticationUser, authorizedUser, adminRouter);
 app.use("/students", authenticationUser, studentRouter);
+
+app.listen(process.env.PORT, () => {
+  console.log(`Server is running on port ${process.env.PORT}`);
+});
