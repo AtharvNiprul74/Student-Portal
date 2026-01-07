@@ -9,11 +9,10 @@ console.log("DB CONFIG CHECK:", {
 
 const pool = mysql2.createPool({
   //database connection
-  host: process.env.MYSQLHOST,
-  user: process.env.MYSQLUSER,
-  password: process.env.MYSQLPASSWORD,
-  database: process.env.MYSQLDATABASE,
-  port: process.env.MYSQLPORT,
+  host: "localhost",
+  user: "root",
+  password: "root",
+  database: "sunbeam_db",
   waitForConnections: true,
   connectionLimit: 10,
 });
