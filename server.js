@@ -24,14 +24,8 @@ app.use("/public", publicRouter);
 app.use("/admin", authenticationUser, authorizedUser, adminRouter);
 app.use("/students", authenticationUser, studentRouter);
 
-app.get("/db-test", async (req, res) => {
-  try {
-    const [rows] = await db.query("SELECT 1");
-    res.send("Database connected ✅");
-  } catch (err) {
-    console.error(err);
-    res.status(500).send("Database connection failed ❌");
-  }
+app.get("/", (req, res) => {
+  res.send("Backend is running 🚀");
 });
 
 app.listen(process.env.PORT, () => {
