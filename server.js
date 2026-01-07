@@ -23,6 +23,10 @@ app.use("/public", publicRouter);
 app.use("/admin", authenticationUser, authorizedUser, adminRouter);
 app.use("/students", authenticationUser, studentRouter);
 
+app.get("/", (req, res) => {
+  res.status(200).send("Backend is running 🚀");
+});
+
 app.listen(process.env.PORT, () => {
   console.log(`Server is running on port ${process.env.PORT}`);
 });
